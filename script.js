@@ -1,5 +1,5 @@
-function scrollCarousel(direction) {
-    const container = document.getElementById('sliderContainer');
+function scrollCarouselById(containerId, direction) {
+    const container = document.getElementById(containerId);
     if (container) {
         const scrollAmount = container.clientWidth;
         container.scrollBy({
