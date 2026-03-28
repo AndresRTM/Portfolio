@@ -891,3 +891,23 @@ footer div {
         break-inside: avoid !important;
     }
 }
+
+.thai-easter-egg {
+    background-image: url('images/michael-schaffler-wWfAKP0Hf3E-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#EasterFooter {
+    transition: background-color 0.3s ease;
+}
+
+#EasterFooter.footer-active-bg {
+    background-color: #ff4380 !important;
+}
+
+#EasterFooter.footer-active-bg *,
+#EasterFooter.footer-active-bg a {
+    color: #ffffff;
+}
