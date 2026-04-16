@@ -6,10 +6,10 @@ export default function Navbar() {
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="#About.html">About</Link></li>
-                    <li><Link to="#CV.html">CV</Link></li>
-                    <li><Link to="#Portfolio.html">Portfolio</Link></li>
-                    <li><Link to="#Contact.html">Contact</Link></li>
+                    <li><Link to="/About">About</Link></li>
+                    <li><Link to="/CV">CV</Link></li>
+                    <li><Link to="/Portfolio">Portfolio</Link></li>
+                    <li><Link to="/Contact">Contact</Link></li>
                 </ul>
             </nav>
         </header>

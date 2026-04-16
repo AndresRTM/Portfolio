@@ -1,4 +1,4 @@
-
+import projectpicture from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
  export default function Portfolio() {
     return (
         <main>
@@ -9,7 +9,7 @@
                 <div className="portfolio-grid">
 
                     <article className="project-card">
-                        <img src="../images/milad-fakurian-y_biCdZ5atA-unsplash.jpg" alt="Preview of Project 1" />
+                        <img src={projectpicture} alt="Preview of Project 1" />
                         <div className="project-content">
                             <h3>Personal Portfolio</h3>
                             <p>A responsive and modern portfolio website built from scratch to showcase my skills
@@ -25,7 +25,7 @@
                     </article>
 
                     <article className="project-card">
-                        <img src="../images/milad-fakurian-y_biCdZ5atA-unsplash.jpg" alt="Preview of Project 2" />
+                        <img src={projectpicture} alt="Preview of Project 2" />
                         <div className="project-content">
                             <h3>C# Banking app</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat rerum eos illo,
@@ -41,7 +41,7 @@
                     </article>
 
                     <article className="project-card">
-                        <img src="../images/milad-fakurian-y_biCdZ5atA-unsplash.jpg" alt="Preview of Project 3" />
+                        <img src={projectpicture} alt="Preview of Project 3" />
                         <div className="project-content">
                             <h3>REST API</h3>
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum expedita cum, non

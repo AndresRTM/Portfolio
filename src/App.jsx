@@ -1,5 +1,5 @@
 import Home from './pages/Home'
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar'  
 import Footer from './components/footer'
 import About from './pages/About'
 import CV from './pages/CV'
@@ -21,7 +21,7 @@ function App() {
           <Route path="/Portfolio" element={<Portfolio />} />
           <Route path="/Contact" element={<Contact />} />
         </Routes>
-        <footer/>
+        <Footer/>
       </HashRouter>
     </>
   )

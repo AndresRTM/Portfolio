@@ -1,3 +1,5 @@
+import cvimage from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
+
 export default function () {
     return (
          <main>
@@ -11,8 +13,7 @@ export default function () {
 
                 <div className="cv-layout">
                     <aside className="cv-sidebar">
-                        <img className="cv-image" src="../images/milad-fakurian-y_biCdZ5atA-unsplash.jpg"
-                            alt="Portrait of Andrés Llano Duran"/>
+                        <img className="cv-image" src={cvimage} alt="Portrait of Andrés Llano Duran"/>
 
                         <div className="cv-contact-info">
                             <h3>Contact Info</h3>

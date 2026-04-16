@@ -1,10 +1,20 @@
-export default function Navbar() {
+import aboutpicture from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
+import picture1 from '../assets/michael-schaffler-wWfAKP0Hf3E-unsplash.jpg';
+import picture2 from '../assets/philipp-potocnik-tHFwghQrMuM-unsplash.jpg';
+import picture3 from '../assets/timur-kozmenko-TMsVTFeZl2o-unsplash.jpg';
+import picture4 from '../assets/snapsaga-sFfZrcEiqtc-unsplash.jpg';
+import picture5 from '../assets/michele-blackwell-rAyCBQTH7ws-unsplash.jpg';
+import picture6 from '../assets/raphael-nogueira-b29Qdj7zc5g-unsplash.jpg';
+import picture7 from '../assets/himal-rana-Fy1DsvIY5Tc-unsplash.jpg';
+import picture8 from '../assets/zayed-ahmed-zadu-eyb_XWY7NHE-unsplash.jpg';
+
+export default function About() {
   return (
      <main className="about-container">
             <h1 className="page-title">About Me</h1>
 
             <section className="about-intro">
-                <img src="../images/milad-fakurian-y_biCdZ5atA-unsplash.jpg" alt="Andrés" className="about-image" />
+                <img src={aboutpicture} alt="Andrés" className="about-image" />
                 <article className="about-intro-text">
                     <h2>My Passion for Systems & Code</h2>
                     <p>Hello! My name is Andrés, developer with a deep passion for programming and system development. While I enjoy building intuitive user experiences on the frontend, my true interest leans heavily towards the backend. I thrive in the analytical side of tech designing robust system architectures, solving complex logical problems, and building scalable solutions from the ground up.</p>
@@ -39,32 +49,32 @@ export default function Navbar() {
                     <p>I’ve been fortunate enough to witness stunning golden hours across the world, including the famous, breathtaking sunset in <strong>Santorini</strong>. However, in my experience, nothing quite beats the sunsets in <strong>Thailand</strong>.</p>
 
                     <div className="generic-carousel-wrapper">
-                        <button className="carousel-control prev" onclick="scrollCarouselById('sunsetSlider', -1)" aria-label="Previous image">
+                        <button className="carousel-control prev" onClick={() => console.log('Klickade bakåt!')} aria-label="Previous image">
                             <i className="fa-solid fa-chevron-left"></i>
                         </button>
 
                         <div className="generic-slider-container" id="sunsetSlider">
                             <div className="carousel-track">
                                 <figure className="slider-item">
-                                    <img src="images/michael-schaffler-wWfAKP0Hf3E-unsplash.jpg" alt="Sunset, koh lanta, thailand" />
+                                    <img src={picture1} alt="Sunset, koh lanta, thailand" />
                                     <figcaption className="image-caption">Sunset, koh lanta, thailand</figcaption>
                                 </figure>
                                 <figure className="slider-item">
-                                    <img src="images/philipp-potocnik-tHFwghQrMuM-unsplash.jpg" alt="Sunset, koh lanta, thailand" />
+                                    <img src={picture2} alt="Sunset, koh lanta, thailand" />
                                     <figcaption className="image-caption">Beach vibes in Thailand</figcaption>
                                 </figure>
                                 <figure className="slider-item">
-                                    <img src="images/timur-kozmenko-TMsVTFeZl2o-unsplash.jpg" alt="Sunset over the islands" />
+                                    <img src={picture3} alt="Sunset over the islands" />
                                     <figcaption className="image-caption">Twilight over koh phangan, thailand</figcaption>
                                 </figure>
                                 <figure className="slider-item">
-                                    <img src="images/snapsaga-sFfZrcEiqtc-unsplash.jpg" alt="Vibrant tropical sunset colors" />
+                                    <img src={picture4} alt="Vibrant tropical sunset colors" />
                                     <figcaption className="image-caption">Vibrant tropical colors on Koh lipe, thailand</figcaption>
                                 </figure>
                             </div>
                         </div>
 
-                        <button className="carousel-control next" onclick="scrollCarouselById('sunsetSlider', 1)" aria-label="Next image">
+                        <button className="carousel-control next" onClick={() => console.log('Klickade framåt!')} aria-label="Next image">
                             <i className="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
@@ -72,38 +82,38 @@ export default function Navbar() {
 
                 <article>
                     <h2>A Taste for Culinary Adventures</h2>
-                    <p>Beyond tech and sports, I am a huge food enthusiast. I am particularly drawn to the vibrant and diverse flavors of Asian cuisine. However, no matter how many new cuisines I explore, classNameic Italian food will always hold a special place in my heart.</p>
+                    <p>Beyond tech and sports, I am a huge food enthusiast. I am particularly drawn to the vibrant and diverse flavors of Asian cuisine. However, no matter how many new cuisines I explore, className Italian food will always hold a special place in my heart.</p>
                 </article>
 
                 <section className="culinary-adventures">
                     <h4>Snapshot</h4>
                     <div className="generic-carousel-wrapper">
-                        <button className="carousel-control prev" onclick="scrollCarouselById('foodSlider', -1)" aria-label="Previous dish">
+                        <button className="carousel-control prev" onClick={() => console.log('Klickade bakåt!')} aria-label="Previous dish">
                             <i className="fa-solid fa-chevron-left"></i>
                         </button>
 
                         <div className="generic-slider-container" id="foodSlider">
                             <div className="carousel-track">
                                 <figure className="slider-item">
-                                    <img src="images/michele-blackwell-rAyCBQTH7ws-unsplash.jpg" alt="A bowl of Japanese Ramen" />
+                                    <img src={picture5} alt="A bowl of Japanese Ramen" />
                                     <figcaption className="image-caption">Japanese Ramen</figcaption>
                                 </figure>
                                 <figure className="slider-item">
-                                    <img src="images/raphael-nogueira-b29Qdj7zc5g-unsplash.jpg" alt="A plate of Italian Carbonara" />
-                                    <figcaption className="image-caption">classNameic Carbonara</figcaption>
+                                    <img src={picture6} alt="A plate of Italian Carbonara" />
+                                    <figcaption className="image-caption">Italian Carbonara</figcaption>
                                 </figure>
                                 <figure className="slider-item">
-                                    <img src="images/himal-rana-Fy1DsvIY5Tc-unsplash.jpg" alt="Korean BBQ setup" />
+                                    <img src={picture7} alt="Korean BBQ setup" />
                                     <figcaption className="image-caption">Korean BBQ</figcaption>
                                 </figure>
                                 <figure className="slider-item">
-                                    <img src="images/zayed-ahmed-zadu-eyb_XWY7NHE-unsplash.jpg" alt="Thai Green Curry dish" />
+                                    <img src={picture8} alt="Thai Green Curry dish" />
                                     <figcaption className="image-caption">Thai Green Curry</figcaption>
                                 </figure>
                             </div>
                         </div>
 
-                        <button className="carousel-control next" onclick="scrollCarouselById('foodSlider', 1)" aria-label="Next dish">
+                        <button className="carousel-control next" onClick={() => console.log('Klickade framåt!')} aria-label="Next dish">
                             <i className="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
