@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import aboutpicture from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
 import picture1 from '../assets/michael-schaffler-wWfAKP0Hf3E-unsplash.jpg';
 import picture2 from '../assets/philipp-potocnik-tHFwghQrMuM-unsplash.jpg';
@@ -9,8 +10,21 @@ import picture7 from '../assets/himal-rana-Fy1DsvIY5Tc-unsplash.jpg';
 import picture8 from '../assets/zayed-ahmed-zadu-eyb_XWY7NHE-unsplash.jpg';
 
 export default function About() {
-  return (
-     <main className="about-container">
+    const sunsetSliderRef = useRef(null);
+    const foodSliderRef = useRef(null);
+
+    const scrollCarousel = (sliderRef, direction) => {
+        if (sliderRef.current) {
+            const scrollAmount = sliderRef.current.clientWidth;
+            sliderRef.current.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    return (
+        <main className="about-container">
             <h1 className="page-title">About Me</h1>
 
             <section className="about-intro">
@@ -49,11 +63,11 @@ export default function About() {
                     <p>I’ve been fortunate enough to witness stunning golden hours across the world, including the famous, breathtaking sunset in <strong>Santorini</strong>. However, in my experience, nothing quite beats the sunsets in <strong>Thailand</strong>.</p>
 
                     <div className="generic-carousel-wrapper">
-                        <button className="carousel-control prev" onClick={() => console.log('Klickade bakåt!')} aria-label="Previous image">
+                        <button className="carousel-control prev" onClick={() => scrollCarousel(sunsetSliderRef, -1)} aria-label="Previous image">
                             <i className="fa-solid fa-chevron-left"></i>
                         </button>
 
-                        <div className="generic-slider-container" id="sunsetSlider">
+                        <div className="generic-slider-container" ref={sunsetSliderRef}>
                             <div className="carousel-track">
                                 <figure className="slider-item">
                                     <img src={picture1} alt="Sunset, koh lanta, thailand" />
@@ -74,7 +88,7 @@ export default function About() {
                             </div>
                         </div>
 
-                        <button className="carousel-control next" onClick={() => console.log('Klickade framåt!')} aria-label="Next image">
+                        <button className="carousel-control next" onClick={() => scrollCarousel(sunsetSliderRef, 1)} aria-label="Next image">
                             <i className="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
@@ -88,11 +102,11 @@ export default function About() {
                 <section className="culinary-adventures">
                     <h4>Snapshot</h4>
                     <div className="generic-carousel-wrapper">
-                        <button className="carousel-control prev" onClick={() => console.log('Klickade bakåt!')} aria-label="Previous dish">
+                        <button className="carousel-control prev" onClick={() => scrollCarousel(foodSliderRef, -1)} aria-label="Previous dish">
                             <i className="fa-solid fa-chevron-left"></i>
                         </button>
 
-                        <div className="generic-slider-container" id="foodSlider">
+                        <div className="generic-slider-container" ref={foodSliderRef}>
                             <div className="carousel-track">
                                 <figure className="slider-item">
                                     <img src={picture5} alt="A bowl of Japanese Ramen" />
@@ -113,7 +127,7 @@ export default function About() {
                             </div>
                         </div>
 
-                        <button className="carousel-control next" onClick={() => console.log('Klickade framåt!')} aria-label="Next dish">
+                        <button className="carousel-control next" onClick={() => scrollCarousel(foodSliderRef, 1)} aria-label="Next dish">
                             <i className="fa-solid fa-chevron-right"></i>
                         </button>
                     </div>
@@ -145,5 +159,5 @@ export default function About() {
                 </ul>
             </section>
         </main>
-  )
+    )
 }

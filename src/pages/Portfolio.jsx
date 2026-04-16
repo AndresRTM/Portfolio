@@ -1,5 +1,9 @@
+import { useState } from 'react';
 import projectpicture from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
- export default function Portfolio() {
+export default function Portfolio() {
+
+    const [activeModal, setActiveModal] = useState(null);
+
     return (
         <main>
             <section className="portfolio-section">
@@ -20,7 +24,9 @@ import projectpicture from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
                                 <span>JavaScript</span>
                                 <span>React</span>
                             </div>
-                            <a href="#" className="open-modal-btn" data-target="modal-1">View Project</a>
+                            <button className="open-modal-btn" onClick={() => setActiveModal('modal-1')}>
+                                View Project
+                            </button>
                         </div>
                     </article>
 
@@ -36,7 +42,9 @@ import projectpicture from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
                                 <span>.NET</span>
                                 <span>SQL</span>
                             </div>
-                            <a href="#" className="open-modal-btn" data-target="modal-2">View Project</a>
+                            <button className="open-modal-btn" onClick={() => setActiveModal('modal-2')}>
+                                View Project
+                            </button>
                         </div>
                     </article>
 
@@ -54,11 +62,33 @@ import projectpicture from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
                                 <span>C#</span>
                                 <span>LINQ</span>
                             </div>
-                            <a href="#" className="open-modal-btn" data-target="modal-3">Coming Soon</a>
+                            <button className="open-modal-btn">
+                                Coming Soon
+                            </button>
                         </div>
                     </article>
                 </div>
             </section>
+            {activeModal === 'modal-1' && (
+                <div className="modal-overlay" onClick={() => setActiveModal(null)}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <span className="close-btn" onClick={() => setActiveModal(null)}>&times;</span>
+                        <h2>Personal Portfolio</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, iure!</p>
+                    </div>
+                </div>
+            )}
+
+            {activeModal === 'modal-2' && (
+                <div className="modal-overlay" onClick={() => setActiveModal(null)}>
+                    <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+                        <span className="close-btn" onClick={() => setActiveModal(null)}>&times;</span>
+                        <h2>C# Banking App</h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, iure!</p>
+                    </div>
+                </div>
+            )}
+
         </main>
     )
 }
