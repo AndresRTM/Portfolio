@@ -1,5 +1,24 @@
 import heroprofileimg from '../assets/yuri-krupenin-wSRuljSPrwQ-unsplash.jpg';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import BriefItem from '../components/BriefItem';
+
+const briefItems = [
+    {
+        title: 'BIM & Data',
+        description: 'Expertise in coordinating multidisciplinary infrastructure projects.',
+    },
+    {
+        title: 'Development',
+        description:
+            "With a Bachelor's degree in Computer Science, I have a solid foundation in Java, C++, and systems theory. I am now further specializing in .NET, C#, and modern backend development.",
+    },
+
+    {
+        title: 'Development',
+        description:
+            "With a Bachelor's degree in Computer Science, I have a solid foundation in Java, C++, and systems theory. I am now further specializing in .NET, C#, and modern backend development.",
+    },
+];
 
 export default function Home() {
     return (
@@ -12,7 +31,7 @@ export default function Home() {
                         <p className="hero-subtitle">BIM Specialist & Fullstack .NET Developer</p>
 
                         <p>Welcome! With a solid background in BIM and data coordination from some of Sweden's largest
-                            infrastructure projects, I am currently transitioning into the IT sector. I’m leveraging my
+                            infrastructure projects, I am currently transitioning into the IT sector. I'm leveraging my
                             experience in managing complex data to build a new foundation in software development.</p>
 
                         <p>This portfolio marks the beginning of my journey as a developer. Explore my work as I
@@ -32,19 +51,12 @@ export default function Home() {
             </section>
 
             <section className="home-brief">
-                <div className="brief-item">
-                    <h3>BIM & Data</h3>
-                    <p>Expertise in coordinating multidisciplinary infrastructure projects.</p>
-                </div>
-                <div className="brief-item">
-                    <h3>Development</h3>
-                    <p>
-                        With a Bachelor's degree in Computer Science, I have a solid foundation in
-                        Java, C++, and systems theory. I am now further specializing in .NET, C#,
-                        and modern backend development.
-                    </p>
-                </div>
+                {briefItems.map((item) => (
+                    <BriefItem key={item.title} title={item.title} description={item.description} />
+                ))}
             </section>
         </main>
-    )
+    );
 }
+
+     

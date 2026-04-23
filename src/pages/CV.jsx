@@ -1,11 +1,12 @@
 import cvimage from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
+import cvData from '../data/cvData.json';
 
 export default function () {
     return (
          <main>
             <div className="cv-container">
                 <div className="print-action-container">
-                    <button onclick="window.print()" className="cta-button">
+                    <button onClick={() => window.print()} className="cta-button">
                         <i className="fa-solid fa-print"></i> Print CV
                     </button>
                 </div>
@@ -38,15 +39,12 @@ export default function () {
                     <div className="cv-main-content">
                         <section className="education-section">
                             <h2>Education</h2>
-                            <h3>.NET Fullstack Developer</h3>
-                            <p><em>Chas Academy, 2025 - Current</em></p>
-
-                            <h3>Bachelor of Computer & Data Science</h3>
-                            <p><em>Stockholm University, 2019 - 2022</em></p>
-
-                            <h3>STI-Ingenjör Elinstallation</h3>
-                            <p><em>Stockholms Tekniska Institut, 2013 - 2015</em></p>
-
+                            {cvData.education.map((entry) => (
+                                <div key={entry.degree}>
+                                    <h3>{entry.degree}</h3>
+                                    <p><em>{entry.institution}, {entry.period}</em></p>
+                                </div>
+                            ))}
                         </section>
 
                         <section className="skills-section">
@@ -70,42 +68,13 @@ export default function () {
 
                         <section className="experience-section">
                             <h2>Experience</h2>
-
-                            <h3>BIM Specialist & Junior Developer</h3>
-                            <p><em>AEC/COWI, March 2024 - February 2026</em></p>
-                            <p>My role involved developing and implementing efficient work processes and methodologies,
-                                leading project coordination, and ensuring the quality assurance of technical
-                                documentation. I maintain continuous communication with clients while developing and
-                                managing BIM models for multidisciplinary infrastructure projects. My experience
-                                includes data coordination for major projects such as Västlänken and TSK30, the
-                                establishment and management of coordination models, and collaborating with development
-                                teams to test in-house software using Azure DevOps.</p>
-
-                            <h3>BIM Consultant</h3>
-                            <p><em>AFRY, June 2023 - March 2024</em></p>
-                            <p>I have extensive experience leading coordination in multidisciplinary infrastructure
-                                projects and producing documentation in accordance with client requirements. My
-                                expertise also includes CAD and data coordination.</p>
-
-                            <h3> CAD & Datacoordinator and Electrical Designer</h3>
-                            <p><em>AFRY, January 2017 - June 2023</em></p>
-                            <p>My experience includes designing a wide range of electrical drawings for infrastructure
-                                projects and taking responsibility for developing coordination models in accordance with
-                                client requirements. I have extensive expertise in electrical engineering, as well as
-                                CAD and data coordination within infrastructure projects, including advanced 3D
-                                modeling.</p>
-
-                            <h3>Electrical Consultant</h3>
-                            <p><em>AB Teknoplan, August 2015 - January 2017</em></p>
-                            <p>During my time at AB Teknoplan, I gained extensive experience designing various
-                                electrical drawings for infrastructure projects. I was responsible for developing
-                                coordination models in accordance with client requirements, with a primary focus on
-                                electrical engineering, CAD and data coordination, and advanced 3D modeling.</p>
-                            <h3>Sales Representative, Nespresso Ambassador</h3>
-                            <p><em>Nespresso, February 2012 - January 2017</em></p>
-                            <p>Experienced in identifying customer needs and presenting the most suitable solutions. As
-                                a Nespresso Ambassador, I specialized in high-end sales of Nespresso machines within the
-                                B2C segment, delivering premium customer service and brand representation.</p>
+                            {cvData.experience.map((entry) => (
+                                <div key={entry.title + entry.company}>
+                                    <h3>{entry.title}</h3>
+                                    <p><em>{entry.company}, {entry.period}</em></p>
+                                    <p>{entry.description}</p>
+                                </div>
+                            ))}
                         </section>
 
                         <section className="languages-section">

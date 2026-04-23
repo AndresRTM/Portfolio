@@ -1,0 +1,51 @@
+{
+    "education": [
+        {
+            "degree": ".NET Fullstack Developer",
+            "institution": "Chas Academy",
+            "period": "2025 - Current"
+        },
+        {
+            "degree": "Bachelor of Computer & Data Science",
+            "institution": "Stockholm University",
+            "period": "2019 - 2022"
+        },
+        {
+            "degree": "STI-Ingenjör Elinstallation",
+            "institution": "Stockholms Tekniska Institut",
+            "period": "2013 - 2015"
+        }
+    ],
+    "experience": [
+        {
+            "title": "BIM Specialist & Junior Developer",
+            "company": "AEC/COWI",
+            "period": "March 2024 - February 2026",
+            "description": "My role involved developing and implementing efficient work processes and methodologies, leading project coordination, and ensuring the quality assurance of technical documentation. I maintain continuous communication with clients while developing and managing BIM models for multidisciplinary infrastructure projects. My experience includes data coordination for major projects such as Västlänken and TSK30, the establishment and management of coordination models, and collaborating with development teams to test in-house software using Azure DevOps."
+        },
+        {
+            "title": "BIM Consultant",
+            "company": "AFRY",
+            "period": "June 2023 - March 2024",
+            "description": "I have extensive experience leading coordination in multidisciplinary infrastructure projects and producing documentation in accordance with client requirements. My expertise also includes CAD and data coordination."
+        },
+        {
+            "title": "CAD & Datacoordinator and Electrical Designer",
+            "company": "AFRY",
+            "period": "January 2017 - June 2023",
+            "description": "My experience includes designing a wide range of electrical drawings for infrastructure projects and taking responsibility for developing coordination models in accordance with client requirements. I have extensive expertise in electrical engineering, as well as CAD and data coordination within infrastructure projects, including advanced 3D modeling."
+        },
+        {
+            "title": "Electrical Consultant",
+            "company": "AB Teknoplan",
+            "period": "August 2015 - January 2017",
+            "description": "During my time at AB Teknoplan, I gained extensive experience designing various electrical drawings for infrastructure projects. I was responsible for developing coordination models in accordance with client requirements, with a primary focus on electrical engineering, CAD and data coordination, and advanced 3D modeling."
+        },
+        {
+            "title": "Sales Representative, Nespresso Ambassador",
+            "company": "Nespresso",
+            "period": "February 2012 - January 2017",
+            "description": "Experienced in identifying customer needs and presenting the most suitable solutions. As a Nespresso Ambassador, I specialized in high-end sales of Nespresso machines within the B2C segment, delivering premium customer service and brand representation."
+        }
+    ]
+}
