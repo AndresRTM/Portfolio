@@ -12,12 +12,7 @@ const briefItems = [
         description:
             "With a Bachelor's degree in Computer Science, I have a solid foundation in Java, C++, and systems theory. I am now further specializing in .NET, C#, and modern backend development.",
     },
-
-    {
-        title: 'Development',
-        description:
-            "With a Bachelor's degree in Computer Science, I have a solid foundation in Java, C++, and systems theory. I am now further specializing in .NET, C#, and modern backend development.",
-    },
+   
 ];
 
 export default function Home() {

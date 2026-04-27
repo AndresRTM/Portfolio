@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import aboutpicture from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
 import picture1 from '../assets/michael-schaffler-wWfAKP0Hf3E-unsplash.jpg';
 import picture2 from '../assets/philipp-potocnik-tHFwghQrMuM-unsplash.jpg';
@@ -8,21 +7,46 @@ import picture5 from '../assets/michele-blackwell-rAyCBQTH7ws-unsplash.jpg';
 import picture6 from '../assets/raphael-nogueira-b29Qdj7zc5g-unsplash.jpg';
 import picture7 from '../assets/himal-rana-Fy1DsvIY5Tc-unsplash.jpg';
 import picture8 from '../assets/zayed-ahmed-zadu-eyb_XWY7NHE-unsplash.jpg';
+import ImageCarousel from '../components/ImageCarousel';
+import SkillsList from '../components/SkillsList';
+
+const sunsetImages = [
+    { src: picture1, alt: 'Sunset, koh lanta, thailand', caption: 'Sunset, koh lanta, thailand' },
+    { src: picture2, alt: 'Sunset vibes, koh lanta, thailand', caption: 'Beach vibes in Thailand' },
+    { src: picture3, alt: 'Sunset over the islands', caption: 'Twilight over koh phangan, thailand' },
+    { src: picture4, alt: 'Vibrant tropical sunset colors', caption: 'Vibrant tropical colors on Koh lipe, thailand' },
+];
+
+const foodImages = [
+    { src: picture5, alt: 'A bowl of Japanese Ramen', caption: 'Japanese Ramen' },
+    { src: picture6, alt: 'A plate of Italian Carbonara', caption: 'Italian Carbonara' },
+    { src: picture7, alt: 'Korean BBQ setup', caption: 'Korean BBQ' },
+    { src: picture8, alt: 'Thai Green Curry dish', caption: 'Thai Green Curry' },
+];
+
+const skills = [
+    { icon: 'devicon-html5-plain', label: 'HTML5' },
+    { icon: 'devicon-css3-plain', label: 'CSS3' },
+    { icon: 'devicon-javascript-plain', label: 'JavaScript' },
+    { icon: 'devicon-csharp-plain', label: 'C#' },
+    { icon: 'devicon-dotnetcore-plain', label: '.NET' },
+    { icon: 'devicon-azuresqldatabase-plain', label: 'SQL' },
+    { icon: 'devicon-git-plain', label: 'Git' },
+    { icon: 'devicon-github-plain', label: 'GitHub' },
+    { icon: 'devicon-gitlab-plain', label: 'GitLab' },
+    { icon: 'devicon-react-original', label: 'React' },
+    { icon: 'devicon-java-plain', label: 'Java' },
+    { icon: 'devicon-cplusplus-plain', label: 'C++' },
+    { icon: 'devicon-python-plain', label: 'Python' },
+    { icon: 'devicon-visualstudio-plain', label: 'Visual Studio' },
+    { icon: 'devicon-vscode-plain', label: 'Visual Studio Code' },
+    { icon: 'devicon-bootstrap-plain', label: 'Bootstrap' },
+    { icon: 'devicon-figma-plain', label: 'Figma' },
+    { icon: 'devicon-eclipse-plain', label: 'Eclipse' },
+    { icon: 'devicon-intellij-plain', label: 'IntelliJ IDEA' },
+];
 
 export default function About() {
-    const sunsetSliderRef = useRef(null);
-    const foodSliderRef = useRef(null);
-
-    const scrollCarousel = (sliderRef, direction) => {
-        if (sliderRef.current) {
-            const scrollAmount = sliderRef.current.clientWidth;
-            sliderRef.current.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-    };
-
     return (
         <main className="about-container">
             <h1 className="page-title">About Me</h1>
@@ -54,44 +78,14 @@ export default function About() {
                 <article>
                     <h2>Wanderlust</h2>
                     <p>Traveling is more than just a hobby for me, it is a necessity. I have a deep passion for exploring new places, immersing myself in different cultures, and discovering local cuisines. My journeys have taken me to numerous countries both within Europe and across the globe.</p>
-                    <p>However, the place that has left the greatest mark on me is <strong>Thailand</strong>. It’s a country that truly has it all, from the incredible flavors of the street food to the genuine kindness of the people. Most importantly, I’ve deeply connected with their philosophy of life, often summarized by the phrase <strong><em>"Mai Pen Rai"</em></strong>.</p>
+                    <p>However, the place that has left the greatest mark on me is <strong>Thailand</strong>. It's a country that truly has it all, from the incredible flavors of the street food to the genuine kindness of the people. Most importantly, I've deeply connected with their philosophy of life, often summarized by the phrase <strong><em>"Mai Pen Rai"</em></strong>.</p>
                 </article>
 
                 <section className="sunset-section">
                     <h2>Sunset Lover</h2>
-                    <p>If there is one thing that can truly make me stop in my tracks, it’s a beautiful sunset. I consider myself a true <strong>sunset lover</strong>. While I deeply appreciate the beauty of a sunrise, I must admit they are a bit harder to experience simply because the struggle of waking up that early is very real!</p>
-                    <p>I’ve been fortunate enough to witness stunning golden hours across the world, including the famous, breathtaking sunset in <strong>Santorini</strong>. However, in my experience, nothing quite beats the sunsets in <strong>Thailand</strong>.</p>
-
-                    <div className="generic-carousel-wrapper">
-                        <button className="carousel-control prev" onClick={() => scrollCarousel(sunsetSliderRef, -1)} aria-label="Previous image">
-                            <i className="fa-solid fa-chevron-left"></i>
-                        </button>
-
-                        <div className="generic-slider-container" ref={sunsetSliderRef}>
-                            <div className="carousel-track">
-                                <figure className="slider-item">
-                                    <img src={picture1} alt="Sunset, koh lanta, thailand" />
-                                    <figcaption className="image-caption">Sunset, koh lanta, thailand</figcaption>
-                                </figure>
-                                <figure className="slider-item">
-                                    <img src={picture2} alt="Sunset, koh lanta, thailand" />
-                                    <figcaption className="image-caption">Beach vibes in Thailand</figcaption>
-                                </figure>
-                                <figure className="slider-item">
-                                    <img src={picture3} alt="Sunset over the islands" />
-                                    <figcaption className="image-caption">Twilight over koh phangan, thailand</figcaption>
-                                </figure>
-                                <figure className="slider-item">
-                                    <img src={picture4} alt="Vibrant tropical sunset colors" />
-                                    <figcaption className="image-caption">Vibrant tropical colors on Koh lipe, thailand</figcaption>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <button className="carousel-control next" onClick={() => scrollCarousel(sunsetSliderRef, 1)} aria-label="Next image">
-                            <i className="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
+                    <p>If there is one thing that can truly make me stop in my tracks, it's a beautiful sunset. I consider myself a true <strong>sunset lover</strong>. While I deeply appreciate the beauty of a sunrise, I must admit they are a bit harder to experience simply because the struggle of waking up that early is very real!</p>
+                    <p>I've been fortunate enough to witness stunning golden hours across the world, including the famous, breathtaking sunset in <strong>Santorini</strong>. However, in my experience, nothing quite beats the sunsets in <strong>Thailand</strong>.</p>
+                    <ImageCarousel images={sunsetImages} />
                 </section>
 
                 <article>
@@ -101,63 +95,14 @@ export default function About() {
 
                 <section className="culinary-adventures">
                     <h4>Snapshot</h4>
-                    <div className="generic-carousel-wrapper">
-                        <button className="carousel-control prev" onClick={() => scrollCarousel(foodSliderRef, -1)} aria-label="Previous dish">
-                            <i className="fa-solid fa-chevron-left"></i>
-                        </button>
-
-                        <div className="generic-slider-container" ref={foodSliderRef}>
-                            <div className="carousel-track">
-                                <figure className="slider-item">
-                                    <img src={picture5} alt="A bowl of Japanese Ramen" />
-                                    <figcaption className="image-caption">Japanese Ramen</figcaption>
-                                </figure>
-                                <figure className="slider-item">
-                                    <img src={picture6} alt="A plate of Italian Carbonara" />
-                                    <figcaption className="image-caption">Italian Carbonara</figcaption>
-                                </figure>
-                                <figure className="slider-item">
-                                    <img src={picture7} alt="Korean BBQ setup" />
-                                    <figcaption className="image-caption">Korean BBQ</figcaption>
-                                </figure>
-                                <figure className="slider-item">
-                                    <img src={picture8} alt="Thai Green Curry dish" />
-                                    <figcaption className="image-caption">Thai Green Curry</figcaption>
-                                </figure>
-                            </div>
-                        </div>
-
-                        <button className="carousel-control next" onClick={() => scrollCarousel(foodSliderRef, 1)} aria-label="Next dish">
-                            <i className="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
+                    <ImageCarousel images={foodImages} />
                 </section>
             </section>
 
             <section className="about-skills">
                 <h2>My Skills</h2>
-                <ul className="skills-list">
-                    <li><i className="devicon-html5-plain"></i> HTML5</li>
-                    <li><i className="devicon-css3-plain"></i> CSS3</li>
-                    <li><i className="devicon-javascript-plain"></i> JavaScript</li>
-                    <li><i className="devicon-csharp-plain"></i> C#</li>
-                    <li><i className="devicon-dotnetcore-plain"></i> .NET</li>
-                    <li><i className="devicon-azuresqldatabase-plain"></i> SQL</li>
-                    <li><i className="devicon-git-plain"></i> Git</li>
-                    <li><i className="devicon-github-plain"></i> GitHub</li>
-                    <li><i className="devicon-gitlab-plain"></i> GitLab</li>
-                    <li><i className="devicon-react-original"></i> React</li>
-                    <li><i className="devicon-java-plain"></i> Java</li>
-                    <li><i className="devicon-cplusplus-plain"></i> C++</li>
-                    <li><i className="devicon-python-plain"></i> Python</li>
-                    <li><i className="devicon-visualstudio-plain"></i> Visual Studio</li>
-                    <li><i className="devicon-vscode-plain"></i> Visual Studio Code</li>
-                    <li><i className="devicon-bootstrap-plain"></i> Bootstrap</li>
-                    <li><i className="devicon-figma-plain"></i> Figma</li>
-                    <li><i className="devicon-eclipse-plain"></i> Eclipse</li>
-                    <li><i className="devicon-intellij-plain"></i> IntelliJ IDEA</li>
-                </ul>
+                <SkillsList skills={skills} />
             </section>
         </main>
-    )
+    );
 }
