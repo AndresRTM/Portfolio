@@ -1,6 +1,7 @@
 import heroprofileimg from '../assets/yuri-krupenin-wSRuljSPrwQ-unsplash.jpg';
 import { Link } from 'react-router-dom'
 import BriefItem from '../components/BriefItem';
+import usePageTitle from '../hooks/usePageTitle';
 
 const briefItems = [
     {
@@ -16,6 +17,7 @@ const briefItems = [
 ];
 
 export default function Home() {
+    usePageTitle('Home')
     return (
         <main>
             <section className="hero-section">

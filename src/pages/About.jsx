@@ -9,6 +9,7 @@ import picture7 from '../assets/himal-rana-Fy1DsvIY5Tc-unsplash.jpg';
 import picture8 from '../assets/zayed-ahmed-zadu-eyb_XWY7NHE-unsplash.jpg';
 import ImageCarousel from '../components/ImageCarousel';
 import SkillsList from '../components/SkillsList';
+import usePageTitle from '../hooks/usePageTitle';
 
 const sunsetImages = [
     { src: picture1, alt: 'Sunset, koh lanta, thailand', caption: 'Sunset, koh lanta, thailand' },
@@ -47,6 +48,7 @@ const skills = [
 ];
 
 export default function About() {
+    usePageTitle('About')
     return (
         <main className="about-container">
             <h1 className="page-title">About Me</h1>

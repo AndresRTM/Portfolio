@@ -1,16 +1,16 @@
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 
 export default function ImageCarousel({ images }) {
     const sliderRef = useRef(null);
 
-    const scroll = (direction) => {
+    const scroll = useCallback((direction) => {
         if (sliderRef.current) {
             sliderRef.current.scrollBy({
                 left: direction * sliderRef.current.clientWidth,
                 behavior: 'smooth'
             });
         }
-    };
+    }, []);
 
     return (
         <div className="generic-carousel-wrapper">

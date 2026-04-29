@@ -14,13 +14,20 @@ export default function ProjectCard({ project }) {
                     <div className="project-tags">
                         {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
                     </div>
-                    {project.status === 'available' ? (
-                        <button className="open-modal-btn" onClick={() => setModalOpen(true)}>
-                            View Project
-                        </button>
-                    ) : (
-                        <button className="open-modal-btn">Coming Soon</button>
-                    )}
+                    <div className="project-card-actions">
+                        {project.status === 'available' ? (
+                            <button className="open-modal-btn" onClick={() => setModalOpen(true)}>
+                                View Project
+                            </button>
+                        ) : (
+                            <button className="open-modal-btn" disabled>Coming Soon</button>
+                        )}
+                        {project.url && (
+                            <a className="github-link" href={project.url} target="_blank" rel="noreferrer">
+                                <i className="fa-brands fa-github"></i> GitHub
+                            </a>
+                        )}
+                    </div>
                 </div>
             </article>
 
@@ -31,8 +38,8 @@ export default function ProjectCard({ project }) {
                         <h2>{project.title}</h2>
                         <p>{project.description}</p>
                         {project.url && (
-                            <a href={project.url} target="_blank" rel="noreferrer">
-                                View on GitHub
+                            <a className="github-link modal-github-link" href={project.url} target="_blank" rel="noreferrer">
+                                <i className="fa-brands fa-github"></i> View on GitHub
                             </a>
                         )}
                     </div>

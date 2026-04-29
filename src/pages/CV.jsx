@@ -1,7 +1,9 @@
 import cvimage from '../assets/milad-fakurian-y_biCdZ5atA-unsplash.jpg';
 import cvData from '../data/cvData.json';
+import usePageTitle from '../hooks/usePageTitle';
 
-export default function () {
+export default function CV() {
+    usePageTitle('CV')
     return (
          <main>
             <div className="cv-container">

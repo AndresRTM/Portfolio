@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 export default function Footer() {
     return (
         <footer>
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/About">About</Link></li>
-                <li><Link to="/Portfolio">Portfolio</Link></li>
-                <li><Link to="/CV">CV</Link></li>
+                <li><NavLink to="/" end>Home</NavLink></li>
+                <li><NavLink to="/About">About</NavLink></li>
+                <li><NavLink to="/Portfolio">Portfolio</NavLink></li>
+                <li><NavLink to="/CV">CV</NavLink></li>
             </ul>
             <ul>
-                <li><Link to="/Contact">Contact</Link></li>
+                <li><NavLink to="/Contact">Contact</NavLink></li>
                 <li className="social-icons">
                     <a href="tel:00809808080"><i className="fa-solid fa-phone"></i></a>
                     <a href="mailto:andresdev@duck.com"><i className="fa-solid fa-envelope"></i></a>
